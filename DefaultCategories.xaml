@@ -1,0 +1,53 @@
+﻿<Window x:Class="ImageScreeningSystem.DefaultCategories"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImageScreeningSystem"
+        mc:Ignorable="d"
+        Title="Default Category" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="47"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="270"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="600"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="   New Default Defect Category:" FontSize="25" Foreground="Black" FontWeight="Bold" Grid.Column="0" Grid.Row="0"  VerticalAlignment="Center" HorizontalAlignment="Left" />
+        <TextBox Name="categoryName"  Width="550" Height="40" Foreground="Black" FontSize="25" Background="LightGray" Grid.Column="0" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Name="addBtn" Content="Add" Click="addBtnClicked" Width="130" Height="40" Background="Green" FontFamily="Ubuntu" FontSize="25" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" >
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="50"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Label Content="   Default Defect Category :" FontSize="25" Foreground="Black" FontWeight="Bold" Grid.Column="0" Grid.Row="2"  VerticalAlignment="Center" HorizontalAlignment="Left" />
+
+        <ListBox Name="listBox" Width="550" Height="250" SelectionChanged="folderSelected" FontSize="25" Grid.Column="0" Grid.Row="3" Foreground="Black" BorderBrush="Black" BorderThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center" Background="LightBlue"/>
+
+        <Button Name="deleteBtn" IsEnabled="False" Content="Delete" Click="deleteBtnClicked" Width="130" Height="40" Background="Red" Foreground="White" FontFamily="Ubuntu" FontSize="25" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="3">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button Name="closeBtn"  Content="Close" Click="closeBtnClicked" Width="130" Height="40" Background="Red" Foreground="White" FontFamily="Ubuntu" FontSize="25" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+    </Grid>
+</Window>

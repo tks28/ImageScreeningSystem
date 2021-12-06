@@ -1,0 +1,99 @@
+﻿<Page x:Class="ImageScreeningSystemHeaderFooter.ManageDefectCategories"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ImageScreeningSystemHeaderFooter"
+      mc:Ignorable="d"
+        Title="ManageDefectCategories" Height="818" Width="1500" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="500"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="65"></RowDefinition>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Column="1" Grid.Row="1" Height="130" Background="LightBlue" Grid.RowSpan="3" Grid.ColumnSpan="2" VerticalAlignment="Top"/>
+
+        <Label Content="  New Session Defect Category :" FontSize="35" FontWeight="Bold" Grid.Column="1" Grid.Row="1"  VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="Black"/>
+
+        <TextBox Name="categoryName" Text="" Foreground="Black" FontSize="30" Grid.Column="1" Grid.Row="2" Background="AliceBlue" Width="760" Height="50" VerticalAlignment="Top"/>
+
+        <Button Name="addBtn" Content="Add" Click="addBtnClicked" Width="264" Height="66" Background="#FF23FF00" FontFamily="Ubuntu" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Grid.RowSpan="2">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Label Content="Existing Session Defect Category:" FontSize="35" FontWeight="Bold" Grid.Column="1" Grid.Row="4"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="Black"/>
+        <ListBox Name="listBox" Background="LightBlue" SelectionChanged="folderSelected" FontSize="25" Grid.Column="1" Grid.Row="5" Grid.RowSpan="2" Foreground="black" BorderBrush="Black" BorderThickness="2"/>
+
+        <!--<Button Name="editBtn" IsEnabled="False" Content="Edit" Click="editBtnClicked" Width="264" Height="66" Background="#FF23FF00" FontFamily="Ubuntu" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="5">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>-->
+
+        <Button Name="deleteBtn" IsEnabled="False" Content="Delete" Click="deleteBtnClicked" Width="264" Height="66" Background="Red" Foreground="White" FontFamily="Ubuntu" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="5" Grid.RowSpan="2">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--<Border x:Name="renamePopOutBorder" Visibility="Hidden" Grid.ColumnSpan="4" Grid.RowSpan="8" VerticalAlignment="center" HorizontalAlignment="Center" BorderBrush="black" BorderThickness="5" Width="1105" Height="255">
+            <Popup Name="renamePopOut" Placement="Center" AllowsTransparency="True" Width="1100" Height="250" >
+                <Grid Background="Gray">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="400"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="200"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="Rename Defect Category :" Foreground="Black" FontSize="35" FontWeight="Bold" Grid.Column="1" Grid.Row="1"  VerticalAlignment="Top" HorizontalAlignment="Left" />
+
+                    <TextBox Name="newName" Text="" Width="500" VerticalAlignment="Center"  FontSize="40" Grid.Column="1" Grid.Row="1"/>
+
+                    <Button Name="renameBtn" Content="Rename" Click="renamebtnClicked" Width="264" Height="66" Background="#FF23FF00" FontFamily="Ubuntu" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="1">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                    <Button Name="closeBtn" Content="Close" Click="closeBtnClicked" Width="264" Height="66" Background="red" Foreground="White" FontFamily="Ubuntu" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Grid.Row="1">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </Grid>
+            </Popup>
+        </Border>-->
+    </Grid>
+</Page>

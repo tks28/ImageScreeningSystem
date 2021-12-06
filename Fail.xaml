@@ -1,0 +1,61 @@
+﻿<Page x:Class="ImageScreeningSystemHeaderFooter.Fail"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ImageScreeningSystemHeaderFooter"
+      mc:Ignorable="d"
+       Title="MainWindow" Height="800" Width="1500">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="850"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="520"></RowDefinition>
+            <RowDefinition Height="120"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="SelectedFolder" Text="{Binding ElementName=DefectComboBox,Path=SelectedValue}" Visibility="Hidden"/>
+        <Label Name="failCategory" Content="Fail Images" FontFamily="Ubuntu" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" Width="264" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
+        <ComboBox x:Name="DefectComboBox"  Background="lightGray" Width="350" Height="60" FontSize="28" IsDropDownOpen="False"  BorderBrush="{x:Null}" SelectionChanged="Defect_SelectionChanged" SelectedValuePath="Content" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center" />
+        <Label Name="countNumFile" Content="Counter" FontFamily="Ubuntu" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" Grid.Row="0" Grid.Column="2"/>
+
+        <ListView x:Name="DefectListView" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="imageSelectedDelete" Foreground="Black">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <Border Height="300" Width="300">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="100"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Image Name="imageDirectory" Source="{Binding failImagePath}" Width="200" Height="200" Grid.Row="0" ></Image>
+                            <TextBlock Text='{Binding failImageName}'  FontSize="15" HorizontalAlignment="Center" Grid.Row="1" Foreground="Black"></TextBlock>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ListBox x:Name="picData" Grid.Row="1" Grid.Column="2" Width="350" Height="500" Foreground="Black" Background="LightGray" Visibility="Hidden"/>
+
+        <Button Name="deleteBtn" IsEnabled="False" Click="failDeleteBtnClicked" Content="Delete" Width="264" Height="66" Background="Red" Foreground="White" FontFamily="Ubuntu" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,47 @@
+﻿<Window x:Class="ImageScreeningSystemHeaderFooter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:ImageScreeningSystemHeaderFooter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1500" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="SingleBorderWindow" >
+    <StackPanel Background="WhiteSmoke">
+
+        <Grid Height="70">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="5"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Width="375" Content="IMAGE SCREENING" Height="50" FontSize="20" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Grid.Row="0" Grid.Column="0" Click="Button_ClickScreening" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Button Width="375" Content="MANAGE DEFECT CATEGORIES" FontSize="20" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Grid.Row="0" Grid.Column="1" Click="Button_ClickManage" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            
+            <ComboBox Width="375" Height="50" FontSize="20" IsDropDownOpen="False" BorderBrush="{x:Null}" BorderThickness="0" materialDesign:TextFieldAssist.DecorationVisibility="Hidden" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center">
+                <ComboBoxItem IsSelected="True" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                    <Button Width="375" Content="VIEW IMAGES" FontSize="20"  Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <Button  Width="375" Content="PASS IMAGES" FontSize="20" Height="50" Background="{x:Null}"  BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_ClickPass"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <Button Width="375" Content="FAIL IMAGES" FontSize="20" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_ClickFail"/>
+                </ComboBoxItem>
+            </ComboBox>
+            <Button Width="375" Content="SESSION" FontSize="20" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Grid.Row="0" Grid.Column="3" Click="Button_ClickSession" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+            <Label x:Name="GridCursor_onImageScreening" Width="375" Height="5" Background="#FF2196F3" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
+            <Label x:Name="GridCursor_onManage" Width="375" Height="5" Background="Transparent" HorizontalAlignment="Center" Grid.Row="1"  Grid.Column="1"/>
+            <Label x:Name="GridCursor_onViewImage" Width="375" Height="5" Background="Transparent" HorizontalAlignment="Center" Grid.Row="1"  Grid.Column="2"/>
+            <Label x:Name="GridCursor_onSession"  Width="375" Height="5" Background="Transparent" HorizontalAlignment="Center" Grid.Row="1"  Grid.Column="3"/>
+        </Grid>
+        <Frame x:Name="Main" NavigationUIVisibility="Hidden"/>
+
+    </StackPanel>
+</Window>
